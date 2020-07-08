@@ -65,6 +65,11 @@ function playSound(event) {
 }
 
 // Add transition end listeners
+let nodeList = document.querySelectorAll('.key');
+for (let i = 0; i < nodeList.length; i++) {
+    addEventListener("transitionend", removePlaying);
+}
+
 document.getElementById("A").addEventListener("transitionend", removePlaying);
 document.getElementById("S").addEventListener("transitionend", removePlaying);
 document.getElementById("D").addEventListener("transitionend", removePlaying);
